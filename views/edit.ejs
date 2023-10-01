@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <a class="btn btn-primary btn-sm my-3" href="/">edit and update product</a>
+            <div class="card">
+                <div class="card-body">
+                    <form action="/update/<%= product.id %>" method="POST" enctype="multipart/form-data">
+                        <div class="my-3">
+                            <label for="">Product Name</label>
+                            <input value="<%=product.name %>" class="form-control" type="text" name="name" id="">
+                        </div>
+                        <div class="my-3">
+                            <label for="">Regular Price</label>
+                            <input value="<%=product.regularPrice %>" class="form-control" type="text" name="regularPrice" id="">
+                        </div>
+                        <div class="my-3">
+                            <label for="">salePrice</label>
+                            <input value="<%=product.salePrice %>" class="form-control" type="text" name="salePrice" id="">
+                        </div>
+                        <div class="my-3">
+                            <label for="">Stock</label>
+                            <input value="<%=product.stock %>" class="form-control" type="text" name="stock" id="">
+                        </div>
+                        <div class="my3"> <img src="/product/<%= product.photo %>" alt=""></div>
+                        <div class="my-3">
+                            <label for="">Photo</label>
+                            <input class="form-control" type="file" name="productPhoto" id="">
+                        </div>
+                        <div class="my-3">
+                            <button type="submit" class="btn btn-primary btn-sn">create</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

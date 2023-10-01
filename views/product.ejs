@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <a class="btn btn-primary btn-sm my-3" href="/create">Add new product</a>
+            <div class="card">
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <th>SN</th>
+                            <th>Photo</th>
+                            <th>Name</th>
+                            <th>Regular Price</th>
+                            <th>Sale Price</th>
+                            <th>Stock</th>
+                            <th>Action</th>
+                        </thead>
+                        <tbody>
+
+                            <% products.forEach((item, index) => { %>
+                                <tr>
+                                    <td class="align-middle">
+                                        <%= index+1 %>
+                                    </td>
+                                    <td class="align-middle"> <img style="height: 70px; width: 70px; object-fit: cover;" src="/product/<%= item.photo %>" alt=""></td>
+                                    <td class="align-middle">
+                                        <%= item.name %>
+                                    </td>
+                                    <td class="align-middle">
+                                        <%= item.regularPrice %>
+                                    </td>
+                                    <td class="align-middle">
+                                        <%= item.salePrice %>
+                                    </td>
+                                    <td class="align-middle">
+                                        <%= item.stock %>
+                                    </td>
+                                    <td class="align-middle">
+                                        <a class="btn btn-sm  btn-primary" href="/single/<%= item.slug %>"> <i class="fa fa-eye"></i></a>
+                                        <a class="btn btn-sm  btn-dark" href="/edit/<%= item.id %>"> <i class="fa fa-edit"></i></a>
+                                        <a class="btn btn-sm btn-danger" href="/product/<%= item.id %>"> <i class="fa fa-trash"></i></a>
+                                    </td>
+                                </tr>
+
+                                <% }) %>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
